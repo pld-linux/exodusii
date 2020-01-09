@@ -9,6 +9,7 @@ License:	BSD
 Group:		Libraries
 Source0:	https://github.com/certik/exodus/archive/%{gitref}/%{name}-%{snap}.tar.gz
 # Source0-md5:	959f785e18f57aa999f637d4198e0047
+Patch0:		%{name}-libdir.patch
 # mirror; original project URL, sf.net/p/exodusii returns 403
 URL:		https://github.com/certik/exodus
 BuildRequires:	cmake >= 2.6
@@ -69,6 +70,7 @@ Dokumentacja do bibliotek Exodus II.
 
 %prep
 %setup -q -n exodus-%{gitref}
+%patch0 -p1
 
 # expected by nemesis
 %{__mv} exodus exodusii
