@@ -4,7 +4,8 @@ Name:		exodusii
 Version:	6.09.0
 %define	gitref	f7b697abda26c05a5177c9ecf75c782f0b0f31e6
 %define	snap	20150604
-Release:	0.%{snap}.1
+%define	rel	2
+Release:	0.%{snap}.%{rel}
 License:	BSD
 Group:		Libraries
 Source0:	https://github.com/certik/exodus/archive/%{gitref}/%{name}-%{snap}.tar.gz
@@ -17,6 +18,7 @@ BuildRequires:	curl-devel
 BuildRequires:	hdf5-devel
 BuildRequires:	netcdf-devel >= 4.2.1.1
 BuildRequires:	python >= 1:2.5
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	zlib-devel
 Requires:	netcdf >= 4.2.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,9 +60,7 @@ Pythonowy interfejs do części biblioteki Exodus II.
 Summary:	Documentation for Exodus II libraries
 Summary(pl.UTF-8):	Dokumentacja do bibliotek Exodus II
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description doc
 Documentation for Exodus II libraries.
