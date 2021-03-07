@@ -60,7 +60,7 @@ Pythonowy interfejs do części biblioteki Exodus II.
 Summary:	Documentation for Exodus II libraries
 Summary(pl.UTF-8):	Dokumentacja do bibliotek Exodus II
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description doc
 Documentation for Exodus II libraries.
