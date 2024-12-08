@@ -4,7 +4,7 @@ Name:		exodusii
 Version:	6.09.0
 %define	gitref	f7b697abda26c05a5177c9ecf75c782f0b0f31e6
 %define	snap	20150604
-%define	rel	2
+%define	rel	3
 Release:	0.%{snap}.%{rel}
 License:	BSD
 Group:		Libraries
