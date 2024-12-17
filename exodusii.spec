@@ -18,6 +18,7 @@ BuildRequires:	curl-devel
 BuildRequires:	hdf5-devel
 BuildRequires:	netcdf-devel >= 4.2.1.1
 BuildRequires:	python >= 1:2.5
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	zlib-devel
 Requires:	netcdf >= 4.2.1.1
