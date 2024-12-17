@@ -70,7 +70,7 @@ Dokumentacja do bibliotek Exodus II.
 
 %prep
 %setup -q -n exodus-%{gitref}
-%patch0 -p1
+%patch -P0 -p1
 
 # expected by nemesis
 %{__mv} exodus exodusii
