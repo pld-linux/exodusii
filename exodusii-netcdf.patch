@@ -1,0 +1,22 @@
+--- exodus-f7b697abda26c05a5177c9ecf75c782f0b0f31e6/exodus/cbind/src/ex_put_prop.c.orig	2015-06-03 18:20:18.000000000 +0200
++++ exodus-f7b697abda26c05a5177c9ecf75c782f0b0f31e6/exodus/cbind/src/ex_put_prop.c	2025-09-27 11:55:25.712110034 +0200
+@@ -307,7 +307,7 @@ int ex_put_prop (int   exoid,
+ 
+     vals[0] = 0; /* fill value */
+     /*   create attribute to cause variable to fill with zeros per routine spec */
+-    if ((status = nc_put_att_longlong(exoid, propid, _FillValue, int_type, 1, vals)) != NC_NOERR) {
++    if ((status = nc_put_att_longlong(exoid, propid, NC_FillValue, int_type, 1, vals)) != NC_NOERR) {
+       exerrval = status;
+       sprintf(errmsg,
+ 	      "Error: failed to create property name fill attribute in file id %d",
+--- exodus-f7b697abda26c05a5177c9ecf75c782f0b0f31e6/exodus/cbind/src/ex_put_prop_names.c.orig	2015-06-03 18:20:18.000000000 +0200
++++ exodus-f7b697abda26c05a5177c9ecf75c782f0b0f31e6/exodus/cbind/src/ex_put_prop_names.c	2025-09-27 11:57:43.214698452 +0200
+@@ -229,7 +229,7 @@ int ex_put_prop_names (int   exoid,
+     vals[0] = 0; /* fill value */
+ 
+     /*   create attribute to cause variable to fill with zeros per routine spec */
+-    if ((status = nc_put_att_longlong(exoid, propid, _FillValue, int_type, 1, vals)) != NC_NOERR) {
++    if ((status = nc_put_att_longlong(exoid, propid, NC_FillValue, int_type, 1, vals)) != NC_NOERR) {
+       exerrval = status;
+       sprintf(errmsg,
+ 	      "Error: failed to create property name fill attribute in file id %d",

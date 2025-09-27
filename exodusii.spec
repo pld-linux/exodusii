@@ -4,24 +4,25 @@ Name:		exodusii
 Version:	6.09.0
 %define	gitref	f7b697abda26c05a5177c9ecf75c782f0b0f31e6
 %define	snap	20150604
-%define	rel	3
+%define	rel	4
 Release:	0.%{snap}.%{rel}
 License:	BSD
 Group:		Libraries
 Source0:	https://github.com/certik/exodus/archive/%{gitref}/%{name}-%{snap}.tar.gz
 # Source0-md5:	959f785e18f57aa999f637d4198e0047
 Patch0:		%{name}-libdir.patch
+Patch1:		%{name}-netcdf.patch
 # mirror; original project URL, sf.net/p/exodusii returns 403
 URL:		https://github.com/certik/exodus
 BuildRequires:	cmake >= 2.6
 BuildRequires:	curl-devel
 BuildRequires:	hdf5-devel
-BuildRequires:	netcdf-devel >= 4.2.1.1
+BuildRequires:	netcdf-devel >= 4.9.2
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	zlib-devel
-Requires:	netcdf >= 4.2.1.1
+Requires:	netcdf >= 4.9.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +36,7 @@ Summary:	Header files for Exodus II libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek Exodus II
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	netcdf-devel >= 4.2.1.1
+Requires:	netcdf-devel >= 4.9.2
 
 %description devel
 Header files for Exodus II libraries.
@@ -72,6 +73,7 @@ Dokumentacja do bibliotek Exodus II.
 %prep
 %setup -q -n exodus-%{gitref}
 %patch -P0 -p1
+%patch -P1 -p1
 
 # expected by nemesis
 %{__mv} exodus exodusii
